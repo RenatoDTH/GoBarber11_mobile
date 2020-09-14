@@ -39,9 +39,8 @@
       { "ts": "never", "tsx": "never" }
     ],
     "react/jsx-one-expression-per-line": "off",
-    "camelcase":"off",
-    "@typescript-eslint/ban-types": "off",
-    "no-use-before-define": "off"
+    "no-use-before-define": "off",
+    "import/no-unresolved": "off"
   },
   "settings": { "import/resolver": { "typescript": {} } }
 }
