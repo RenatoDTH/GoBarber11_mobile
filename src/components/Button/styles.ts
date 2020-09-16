@@ -17,3 +17,5 @@ export const ButtonText = styled.Text`
   color: #312e38;
   font-size: 18px;
 `;
+
+export const ButtonContainer = styled.View``;
