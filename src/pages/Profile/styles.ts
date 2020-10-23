@@ -15,9 +15,15 @@ export const Title = styled.Text`
   margin: 24px 0;
 `;
 
-export const BackButton = styled.TouchableOpacity`
+export const Header = styled.View`
   margin-top: 40px;
+  flex-direction: row;
+  justify-content: space-between;
 `;
+
+export const BackButton = styled.TouchableOpacity``;
+
+export const SignOutButton = styled.TouchableOpacity``;
 
 export const UserAvatarButton = styled.TouchableOpacity`
   margin-top: 32px;

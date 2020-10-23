@@ -21,7 +21,9 @@ import Button from '../../components/Button';
 import {
   Container,
   Title,
+  Header,
   BackButton,
+  SignOutButton,
   UserAvatarButton,
   UserAvatar,
 } from './styles';
@@ -37,7 +39,7 @@ interface ProfileFormData {
 }
 
 const SignUp: React.FC = () => {
-  const { user, updateUser } = useAuth();
+  const { user, updateUser, signOut } = useAuth();
 
   const formRef = useRef<FormHandles>(null);
   const navigation = useNavigation();
@@ -123,20 +125,21 @@ const SignUp: React.FC = () => {
     [navigation, updateUser],
   );
 
-  const handleUpdateAvater = useCallback(() => {
+  const handleUpdateAvatar = useCallback(() => {
     ImagePicker.showImagePicker(
       {
         title: 'Selecione um avatar',
         cancelButtonTitle: 'Cancelar',
-        takePhotoButtonTitle: 'Usar câmara',
-        chooseFromLibraryButtonTitle: 'Escolhe da galeria',
+        takePhotoButtonTitle: 'Usar câmera',
+        chooseFromLibraryButtonTitle: 'Escolher da galeria',
       },
       (response) => {
         if (response.didCancel) {
           return;
         }
+
         if (response.error) {
-          Alert.alert('Erro ao atualizar seu avatar.');
+          Alert.alert('Erro ao atualizar seu avatar');
           return;
         }
 
@@ -153,11 +156,15 @@ const SignUp: React.FC = () => {
         });
       },
     );
-  }, [user.id, updateUser]);
+  }, [updateUser, user.id]);
 
   const handleGoBack = useCallback(() => {
     navigation.goBack();
   }, [navigation]);
+
+  const handleSignOut = useCallback(() => {
+    signOut();
+  }, [signOut]);
 
   return (
     <>
@@ -168,10 +175,15 @@ const SignUp: React.FC = () => {
       >
         <ScrollView keyboardShouldPersistTaps="handled">
           <Container>
-            <BackButton onPress={handleGoBack}>
-              <Icon name="chevron-left" size={24} color="#999591" />
-            </BackButton>
-            <UserAvatarButton onPress={handleUpdateAvater}>
+            <Header>
+              <BackButton onPress={handleGoBack}>
+                <Icon name="chevron-left" size={24} color="#999591" />
+              </BackButton>
+              <SignOutButton onPress={handleSignOut}>
+                <Icon name="log-out" size={24} color="#999591" />
+              </SignOutButton>
+            </Header>
+            <UserAvatarButton onPress={handleUpdateAvatar}>
               <UserAvatar source={{ uri: user.avatar_url }} />
             </UserAvatarButton>
 
