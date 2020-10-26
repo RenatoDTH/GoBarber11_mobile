@@ -126,7 +126,7 @@ const SignIn: React.FC = () => {
 
             <ForgotPassword
               onPress={() => {
-                'ok';
+                navigation.navigate('ForgotPassword');
               }}
             >
               <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
