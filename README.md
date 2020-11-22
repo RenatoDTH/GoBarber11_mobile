@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="GoBarberLogo" title="GoBarber" src=".github/goBarberLogo.png" />
+    <img alt="GoBarberLogo" title="GoBarber" src=".github/goBarberLogo.PNG" />
 </h1>
 
 # GoBarber11_mobile
@@ -10,7 +10,7 @@ Versão mobile do GoBarber 11 com Typescript e React-native, com ensinamentos da
 GoBarber é um serviço de cadastramento de prestadores, o qual você pode se cadastrar como um e visualizar os agendamentos para o seu serviço. Por outro lado, o consumidor poderá selecionar e agendar com os prestadores de serviço, podendo se usufruir de uma aplicação completa restful, utlizando tanto a versão web, como a mobile.
 
 <p align="center">
-  <img alt="GoBarber" src=".github/goBarberLoginMobile.png" width="100%">
+  <img alt="GoBarber" src=".github/goBarberLoginMobile.PNG" width="100%">
 </p>
 
 ## Dependências
